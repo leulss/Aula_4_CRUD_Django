@@ -1,0 +1,9 @@
+<h1>Tem certeza que quer deletar?</h1>
+<h2>Essa operação não é reversível</h2>
+<div>
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="Sim, Quero">
+</form>
+  <a href="/">Voltar</a>
+</div>

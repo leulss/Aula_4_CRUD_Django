@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Leo Klinger Svartman</title>
+</head>
+
+<body>
+  <h1>Leo Klinger Svartman</h1>
+  <div class="center-box-img">
+    <h2>Jiu Jitsu</h2>
+    <img src="https://www.lojamaria.com.br/wp-content/uploads/2021/02/jiu-e1613139289896.jpg" height="25%" width="25%">
+  </div>
+  <div class="left-content">
+    <p><b>Jiu-jitsu brasileiro</b> (em japonês: ブラジリアン柔術, Burajirian jūjutsu) ou BJJ (Do inglês, Brazilian Jiu-Jitsu)
+      é uma arte marcial e esporte de combate, desenvolvido pela família Gracie, no início do século XX, que se tornou
+      a forma mais difundida e praticada do "Jiu-jitsu" (após o Judô) no mundo. É uma arte marcial de luta agarrada,
+      onde o objetivo é imobilizar o oponente no chão por meio de uma "finalização", colocando o oponente em uma
+      torção de um membro do corpo (como por exemplo uma chave de braço ou chave de perna) ou estrangulamento (como o
+      mata-leão ou triângulo), forçando o oponente a desistir. O Jiu-Jitsu brasileiro tem um apreço em focar na luta
+      de solo onde a luta em pé tem papel secundário, ao contrário de outras marciais de luta agarrada.</p>
+    <p>A <i>Dieta Gracie</i> é uma estratégia de alimentação elaborada por Carlos Gracie, patriarca da família Gracie.
+      Ela está descrita no livro que leva o mesmo nome e foi redigido por Rorion Gracie, brasileiro que mora nos EUA,
+      é praticante de artes marciais e foi um dos criadores do Ultimate Fighting Championship. Consiste em diferentes
+      grupos de alimentos que, entre si, não podem ser misturados mas devem ser srvidos com integrantes dos outros
+      grupos. Dentre os alimentos do <u>grupo B estão:</u></p>
+    <ul>
+      {% for c in comidas %}
+        <li>{{ c.nome }} <a href = "/comida/delete/{{ c.id }}">Deletar</a></li>
+      {% endfor %}
+    </ul>
+    <p>{{ action_com }} mais comidas na lista: </p>
+    <form method="post">
+      {% csrf_token %}
+      {{ form_comida }}
+      <input type="submit" value="Submit">
+    </form>
+    <p>Veja mais em <a target="_blank" href="https://vitat.com.br/dieta-gracie/">vitat.com.br</a></p>
+  </div>
+  <div class="right-content">
+    <p>Adotam-se as seguintes divisões de faixas no jiu-jitsu desportivo brasileiro para seus praticantes, conforme suas experiências e habilidades (juvenil/adulto):</p>
+    <ol>
+      {% for f in faixas %}
+        <li>{{ f.cor }} ({{ f.requer }}) <a href = "/faixas/change/{{ f.id }}">Atualizar</a> <a href = "/faixas/delete/{{ f.id }}">Deletar</a></li>
+      {% endfor %}
+    </ol>
+    <a href="/faixas">Adicione mais faixas</a>
+    <div>
+    <p>Em competições oficiais, o BJJ segue um sistema de pontuações específico para critério de desempate (falta de finalizações) no tempo regulamentar. Segue a tabela de pontuação:</p>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>Pontuação</th>
+            <th>Movimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in finalizacao %}
+        <tr>
+            <td>{{ i.pontos }}</td>
+            <td>{{ i.tipo }} <a href = "/finalizacao/change/{{ i.id }}">Atualizar</a> <a href = "/finalizacao/delete/{{ i.id }}">Deletar</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+      <br>
+    <a href="/finalizacao">Adicione mais Critérios</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>{{ action }} Critério</h1>
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="arte_marcial">Arte marcial:</label>
+    <input type="text" name="arte_marcial" value="{{ finalizacao.arte_marcial }}">
+  </div>
+  <div>
+    <label for="tipo">Tipo:</label>
+    <input type="text" name="tipo" value="{{ finalizacao.tipo }}">
+  </div>
+  <div>
+    <label for="pontos">Pontos:</label>
+    <input type="text" name="pontos" value="{{ finalizacao.pontos }}">
+  </div>
+  <input type="submit" value="Inserir">
+</form>

@@ -1,0 +1,41 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/887/996/885/drawing-sky-clouds-wallpaper-preview.jpg');
+  background-size: 100%;
+}
+
+h1{
+  font-size: 2.5em;
+}
+
+p{
+  text-align: justify;
+}
+
+ol li{
+  margin-top: 5px;
+}
+
+tbody{
+  color: #2b2a2d;
+}
+
+.center-box-img{
+  text-align: center;
+}
+
+.left-content{
+  margin-left: 5%;
+  width: 30%;
+  float: left;
+}
+
+.right-content{
+  margin-right: 5%;
+  width: 30%;
+  float: right;
+}

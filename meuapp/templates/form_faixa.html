@@ -1,0 +1,17 @@
+<h1>{{ action }} Faixas</h1>
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="arte_marcial">Arte marcial:</label>
+    <input type="text" name="arte_marcial" value="{{ faixa.arte_marcial }}">
+  </div>
+  <div>
+    <label for="cor">Cor:</label>
+    <input type="text" name="cor" value="{{ faixa.cor }}">
+  </div>
+  <div>
+    <label for="requer">Requer:</label>
+    <input type="text" name="requer" value="{{ faixa.requer }}">
+  </div>
+  <input type="submit" value="Inserir">
+</form>
