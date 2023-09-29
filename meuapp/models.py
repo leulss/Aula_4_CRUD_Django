@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 class Faixas(models.Model):
     arte_marcial = models.CharField(max_length=25)
