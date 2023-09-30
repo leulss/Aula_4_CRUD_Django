@@ -1,0 +1,18 @@
+<h1>Criar Conta</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Username:</label>
+    <input type="text" name="username">
+  </div>
+   <div>
+    <label>Password:</label>
+    <input type="password" name="password">
+  </div>
+
+  <input type="submit" value="Log in">
+</form>
+
+<span style="color: orange">{{ error_msg }}</span>
+</form>

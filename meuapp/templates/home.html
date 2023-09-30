@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  { % if.request.user.is_authenticated %} <p>Bem vindo {{ reuqest.user.username }} <a href = "/users/logout">Deslogar</a></p>
   <h1>Leo Klinger Svartman</h1>
   <div class="center-box-img">
     <h2>Jiu Jitsu</h2>
